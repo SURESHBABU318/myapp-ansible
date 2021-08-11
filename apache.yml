@@ -6,6 +6,10 @@
       yum:
         name: "httpd"
         state: "present"
+     - name: install python
+       raw: 'cat < /home/ubuntu/script.sh'
+      args:
+        executable: /bin/bash
     - name: Start Apache server
       service:
         name: httpd
